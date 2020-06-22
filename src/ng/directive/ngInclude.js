@@ -237,7 +237,7 @@ var ngIncludeDirective = ['$templateRequest', '$anchorScroll', '$animate',
               if (scope.$$destroyed) return;
 
               if (thisChangeId !== changeCounter) return;
-              var newScope = scope.$new();
+              var newScope = scope.$new(false, scope.$parent);
               ctrl.template = response;
 
               // Note: This will also link all children of ng-include that were contained in the original
